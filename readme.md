@@ -3,11 +3,11 @@
 
 ## Project Summary
 
-Descript the project and list tools being used
+This is a blog app built on ExpressJS and MongoDB. Users can login and add posts. People visiting will be able to comment on posts.  
 
 ## Models
 
-List here of models in app and their properties
+**Posts:** title, slug, author, content, comments
 
 ## Route Table
 
@@ -15,13 +15,24 @@ List routes in a table
 
 | url | method | action |
 |-----|--------|--------|
-| /todo | get | get all todos (index)|
-| /todo/:id | get | get a particular todo (show)|
+| /post | get | get all blog posts (index)|
+| /post/:slug | get | get a particular blog post (show)|
+| /post/new | get | form for a new blog post (new)|
+| /post/ | post | create a new blog post (create)|
+| /post/:slug/edit | get | for to edit a blog post (edit)|
+| /post/:slug | put | change a blog post (update)|
+| /post/:slug | delete | remove a blog post (delete)|
 
 ## User Stories
 
+Users will be able to create, manage, and display their blog posts. People will be able to leave comments on each blog post. 
+
 ## Challenges
 
-- detail roadblocks and anything you did to overcome whether you did or didn't
-
 ## List of Technologies
+
+<ul>
+    <li>ExpressJS</li>
+    <li>MongoDB</li>
+    <li>Heroku</li>
+</ul>
