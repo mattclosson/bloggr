@@ -1,0 +1,8 @@
+{% layout "layout.liquid" %}
+{% block content %}
+<form action="/post/{{post.slug}}?_method=DELETE" method="post">
+    <input type="submit" value="Delete">
+</form>
+<h1>{{post.title}}</h1>
+<p>{{post.content}}</p>
+{% endblock %}

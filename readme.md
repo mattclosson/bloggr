@@ -34,5 +34,7 @@ Users will be able to create, manage, and display their blog posts. People will 
 <ul>
     <li>ExpressJS</li>
     <li>MongoDB</li>
+    <li>Liquid Templates</li>
+    <li>Tailwind CSS</li>
     <li>Heroku</li>
 </ul>

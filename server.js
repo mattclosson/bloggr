@@ -36,12 +36,12 @@ app.use(express.urlencoded({extended: true}))
 // setup our public folder to serve files statically
 app.use(express.static("public"))
 // middlware to create sessions (req.session)
-app.use(session({
-    secret: process.env.SECRET,
-    store: MongoStore.create({mongoUrl: process.env.DATABASE_URL}),
-    resave: false,
-    saveUninitialized: true
-}))
+// app.use(session({
+//     secret: process.env.SECRET,
+//     store: MongoStore.create({mongoUrl: process.env.DATABASE_URL}),
+//     resave: false,
+//     saveUninitialized: true
+// }))
 
 
 // route
@@ -52,8 +52,8 @@ app.get("/", (req, res) => {
 // Register Posts Router
 app.use("/post", PostsRouter)
 
-// Register User Router
-app.use("/user", UserRouter)
+// // Register User Router
+// app.use("/user", UserRouter)
 
 // listener
 const PORT = process.env.PORT || 3000

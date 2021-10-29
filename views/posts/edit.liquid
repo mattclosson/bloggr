@@ -1,0 +1,18 @@
+{% layout "layout.liquid" %}
+{% block content %}
+    <h1>Update Post</h1>
+    <form action="/post/{{post.slug}}?_method=PUT" method="POST">
+        <fieldset>
+            <label>
+                Title: <input type="text" name="title" value="{{post.title}}" />
+            </label>
+            <label>
+                Author: <input type="text" name="author" value="{{post.author}}" />
+            </label>
+            <label>
+                Body: <textarea name="content">{{post.content}}</textarea>
+            </label>
+        </fieldset>
+        <input type="submit" value="Update" />
+    </form>
+{% endblock %}

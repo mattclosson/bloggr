@@ -1,0 +1,8 @@
+{% layout "layout.liquid" %}
+{% block content %}
+    {% for post in posts %}
+        <a href="/post/{{post.slug}}"><h1>{{post.title}}</h1></a>
+        <p>{{post.author}}</p>
+        <p>{{post.content}}</p>
+    {% endfor %}
+{% endblock %}
