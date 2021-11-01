@@ -28,7 +28,7 @@ hr {
 }
 
 .header-content {
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 10px 0 13px 0;
 }
@@ -139,6 +139,7 @@ button, input[type=submit] {
 
 .delete-button {
     display: inline-block;
+    margin-left: 10px;
 }
 
 #delete-button:hover{
@@ -159,5 +160,9 @@ button, input[type=submit] {
     }
     .logo {
         margin-left: 25px;
+    }
+
+    .header-content {
+        padding-right: 25px;
     }
   }
