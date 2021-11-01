@@ -55,7 +55,7 @@ router.post("/login", (req, res) => {
     req.session.loggedIn = true
     req.session.username = username
     // redirect to posts page
-    res.redirect("/post");
+    res.redirect("/posts");
   });
 });
 

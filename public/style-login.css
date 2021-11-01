@@ -5,7 +5,7 @@ body {
     max-width: 500px;
     margin: 0 auto;
     background-color: #fff;
-    margin-top: 90px;
+    margin-top: 10px;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid rgb(8 30 90);
@@ -22,4 +22,22 @@ input[type=text], input[type=password] {
     padding: 5px 10px;
     border-radius: 3px;
     border: 1px solid #ccc;
+}
+
+#login-button {
+    background-color: rgb(23, 53, 133);
+    color: #fff;
+    box-shadow: none;
+    border: 0;
+    padding: 6px 13px;
+    border-radius: 5px;
+}
+
+h1 {
+    font-family: 'PT Serif', 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 52px;
+    color: #fff;
+    text-align: center;
+    margin-top: 90px;
 }

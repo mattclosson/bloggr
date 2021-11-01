@@ -13,19 +13,17 @@ const router = express.Router()
 // Router Middleware
 
 // middleware to check if user is logged in
-// router.use((req, res, next) => {
-//     if (req.session.loggedIn) {
+router.use((req, res, next) => {
+    if (req.session.loggedIn) {
 
-//       next();
-//     } else {
-//       res.redirect("/user/login");
-//     }
-//   });
+      next();
+    } else {
+      res.redirect("/user/login");
+    }
+  });
 
 
-////////////////////////
 // Posts Routes
-////////////////////////
 // index route - get - /posts
 router.get("/", (req, res) => {
     Post.find()
@@ -45,15 +43,6 @@ router.get("/new", (req, res) => {
 // index route - new - /posts
 router.post("/", async (req, res) => {
         console.log(req.user)
-        // const user = User.findById(req.session.id, (err, user) => {
-        //     if(err) {
-        //         console.log(err)
-        //     } else {
-        //         console.log(user)
-        //     }
-        // })
-        // const authorid = user.id
-        // console.log(authorid)
         const post = new Post({title: req.body.title, content: req.body.content });
         await post.save();
         res.redirect('/posts')
