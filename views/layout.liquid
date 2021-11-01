@@ -17,7 +17,7 @@
             <div class="nav">
                 {% if edit_button %}
                     <a href="/posts/{{post.slug}}/edit"><button>Edit</button></a>
-                    <form class="delete-button" action="/post/{{post.slug}}?_method=DELETE" method="post">
+                    <form class="delete-button" action="/posts/{{post.slug}}?_method=DELETE" method="post">
                         <input type="submit" id="delete-button" value="Delete">
                     </form>
                 {%endif%}

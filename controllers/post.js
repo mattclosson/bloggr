@@ -54,9 +54,9 @@ router.post("/", async (req, res) => {
         // })
         // const authorid = user.id
         // console.log(authorid)
-        const post = new Post({title: req.body.title, content: req.body.content, author: req.session.id.toString() });
+        const post = new Post({title: req.body.title, content: req.body.content });
         await post.save();
-        res.redirect('/')
+        res.redirect('/posts')
 })
 // edit route - get 
 router.get("/:slug/edit", (req, res) => {
@@ -72,11 +72,21 @@ router.get("/:slug/edit", (req, res) => {
 })
 
 // index route - edit - /posts
-router.put("/:slug", async (req, res, next) => {
-    req.post = await Post.findById(req.params.id)
-    next()
-  }, savePostAndRedirect('edit'))
+router.put("/:slug", async (req, res) => {
+    const slug = req.params.slug
 
+    //Updating the item with the matching slug
+    Post.findOneAndUpdate({slug}, req.body, { new: true })
+      .then((post) => {
+        // redirect user back to index
+        res.redirect('/posts')
+      })
+      // error handling
+      .catch((error) => {
+        console.log(error)
+        res.json({ error })
+      })
+  })
 // destroy route - delete request - /post/:id
 router.delete("/:slug", (req, res) => {
     // grab the id from params
@@ -85,7 +95,7 @@ router.delete("/:slug", (req, res) => {
     Post.findOneAndRemove({slug})
     .then((post) => {
         // redirect user back to index
-        res.redirect("/post")
+        res.redirect("/posts")
     })
      // error handling
      .catch((error) => {
@@ -115,9 +125,9 @@ function savePostAndRedirect(path) {
       post.content = req.body.content
       try {
         article = await article.save()
-        res.redirect(`/articles/${post.slug}`)
+        res.redirect(`/posts/${post.slug}`)
       } catch (e) {
-        res.render(`articles/${path}`, { post: post })
+        res.render(`posts/${path}`, { post: post })
       }
     }
   }
