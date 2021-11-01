@@ -14,10 +14,13 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^4.6.0",
+    "dompurify": "^2.3.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "jsdom": "^18.0.0",
     "liquid-express-views": "^1.0.8",
+    "marked": "^3.0.8",
     "method-override": "^3.0.0",
     "mongoose": "^6.0.12",
     "mongoose-slug-generator": "^1.0.4",

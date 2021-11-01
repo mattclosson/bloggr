@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(23, 53, 133);
+}
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 90px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(8 30 90);
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1)
+}
+
+form {
+    width: 100%;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}

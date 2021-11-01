@@ -1,0 +1,10 @@
+{% layout "layout.liquid" %}
+{% block content %}
+<form action="/user/signup" method="post">
+    <fieldset>
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+    </fieldset>
+    <input type="submit" value="Sign Up">
+</form>
+{% endblock %}

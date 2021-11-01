@@ -1,8 +1,14 @@
-{% layout "layout.liquid" %}
+{% assign edit_button = 'anything' %}
+{% layout "layout.liquid", edit_button: edit_button %}
 {% block content %}
-<form action="/post/{{post.slug}}?_method=DELETE" method="post">
-    <input type="submit" value="Delete">
-</form>
-<h1>{{post.title}}</h1>
-<p>{{post.content}}</p>
+    <!-- <a href="/post/"><button>Back</button></a>
+    
+    <form class="delete-button" action="/post/{{post.slug}}?_method=DELETE" method="post">
+        <input type="submit" value="Delete">
+    </form> -->
+    <div class="post-container">
+        <h1 class="title">{{post.title}}</h1>
+        <hr>
+        <p>{{post.sanitizedHtml}}</p>
+    </div>
 {% endblock %}

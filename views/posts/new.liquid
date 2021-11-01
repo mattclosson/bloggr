@@ -1,18 +1,17 @@
 {% layout "layout.liquid" %}
 {% block content %}
+<div class="form-container">
     <h1>New Post</h1>
-    <form action="/post" method="POST">
+    <form action="/posts" method="post">
         <fieldset>
             <label>
                 Title: <input type="text" name="title" placeholder="Title" required />
             </label>
             <label>
-                Author: <input type="text" name="author" placeholder="Title" />
-            </label>
-            <label>
                 Body: <textarea name="content" placeholder="Your content here"></textarea>
             </label>
         </fieldset>
-        <input type="submit" value="Submit" />
+        <input type="submit" id="new-submit" value="Submit" />
     </form>
+</div>
 {% endblock %}

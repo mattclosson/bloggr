@@ -1,8 +1,11 @@
+{% assign new_button = 'anything' %}
 {% layout "layout.liquid" %}
 {% block content %}
     {% for post in posts %}
-        <a href="/post/{{post.slug}}"><h1>{{post.title}}</h1></a>
-        <p>{{post.author}}</p>
-        <p>{{post.content}}</p>
+        <div class="post-container">
+            <a href="/posts/{{post.slug}}"><h1>{{post.title}}</h1></a>
+            <p>{{post.author}}</p>
+            <p>{{post.sanitizedHtml}}</p>
+        </div>
     {% endfor %}
 {% endblock %}

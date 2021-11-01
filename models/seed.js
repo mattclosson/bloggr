@@ -15,11 +15,8 @@ const db = mongoose.connection
 db.on("open", () => {
     // array of starter posts
     const startPosts = [
-        { title: "How to", slug: "how-to", author: "Tom", content: "something something something" },
-        { title: "Rainy Day", slug: "rainy-day", author: "Sarah", content: "something something something" },
-        { title: "Sunny Monday", slug: "sunny-monday", author: "John", content: "something something something" },
-        { title: "New Planet", slug: "new-planet", author: "Rachel", content: "something something something" },
-        { title: "Opinion", slug: "opinion", author: "Tom", content: "something something something" },
+        { title: "How to", slug: "how-to", content: "something something something" },
+        { title: "Rainy Day", slug: "rainy-day", content: "something something something" },
       ];
 
     // delete all posts
