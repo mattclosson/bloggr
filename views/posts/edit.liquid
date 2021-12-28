@@ -1,7 +1,13 @@
 {% layout "layout.liquid" %}
 {% block content %}
+
 <div class="form-container">
-    <h1>Update Post</h1>
+    <div class="edit-header">
+        <h1 style="margin-bottom: 15px;">Update Post</h1>
+        <form class="delete-button" action="/{{post.slug}}?_method=DELETE" method="post">
+            <input type="submit" id="delete-button" value="Delete">
+        </form>
+    </div>
     <form action="/posts/{{post.slug}}?_method=PUT" method="POST">
         <fieldset>
             <label>
@@ -14,4 +20,5 @@
         <input type="submit" id="new-submit" value="Update" id="update-button" />
     </form>
 </div>
+
 {% endblock %}

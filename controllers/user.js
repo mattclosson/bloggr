@@ -53,23 +53,19 @@ router.post("/login", (req, res) => {
     if (!result) res.send("wrong password");
     // save login info in sessions
     req.session.loggedIn = true
-    req.session.username = username
+    req.session.user = user
     // redirect to posts page
-    res.redirect("/posts");
+    res.redirect("/");
   });
 });
 
-// // index route - new - /posts
-// router.post("/", (req, res) => {
-//   Post.create(req.body)
-//   .then((post) => {
-//       res.redirect('/post')
-//   })
-//   .catch((err) => {
-//       res.json({err})
-//   })
-// })
-
+router.get("/logout", (req, res) => {
+  // destroy the session
+  req.session.destroy((err) => {
+      // send user back to main page
+      res.redirect("/")
+  })
+})
 
 ////////////////////////////////
 // export the router

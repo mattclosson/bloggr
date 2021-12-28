@@ -9,20 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=PT+Serif:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    
 </head>
 <body>
     <div class="header">
         <div class="header-content">
-            <div class="logo"><a href="/posts">Blogr</a></div>
+            <div class="logo"><a href="/">Blogr</a></div>
             <div class="nav">
                 {% if edit_button %}
-                    <a href="/posts/{{post.slug}}/edit"><button>Edit</button></a>
-                    <form class="delete-button" action="/posts/{{post.slug}}?_method=DELETE" method="post">
-                        <input type="submit" id="delete-button" value="Delete">
-                    </form>
+                    {% if isUser %}
+                        <a href="/{{post.slug}}/edit"><button>Edit</button></a>
+                    {% endif %}
                 {%endif%}
                 {% if new_button %}
-                    <a href="/posts/new"><button>New</button></a>
+                    <a href="/new"><button>New</button></a>
+                    <a href="/user/logout"><button>Logout</button></a>
                 {%endif%}
             </div>
             
@@ -31,5 +33,20 @@
     <div class="container">
         <main>{% block content %}content{% endblock %}</main>
     </div>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var quill = new Quill('.editor', {
+        modules: {
+            toolbar: [
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['image', 'code-block']
+            ]
+        },
+        placeholder: 'Edit',
+        theme: 'snow'  // or 'bubble'
+        });
+    </script>
 </body>
 </html>

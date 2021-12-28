@@ -1,6 +1,7 @@
 body {
-    background-color: rgb(23, 53, 133);
+    background-color: #fff;
 }
+
 .container {
     max-width: 500px;
     margin: 0 auto;
@@ -8,8 +9,7 @@ body {
     margin-top: 10px;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid rgb(8 30 90);
-    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1)
+    border: 1px solid #ccc;
 }
 
 form {
@@ -25,19 +25,20 @@ input[type=text], input[type=password] {
 }
 
 #login-button {
-    background-color: rgb(23, 53, 133);
+    background-color: #1c1c1c;
     color: #fff;
     box-shadow: none;
     border: 0;
-    padding: 6px 13px;
+    padding: 10px 13px;
     border-radius: 5px;
+    width: 100%;
 }
 
 h1 {
     font-family: 'PT Serif', 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: 52px;
-    color: #fff;
+    color: #1c1c1c;
     text-align: center;
     margin-top: 90px;
 }

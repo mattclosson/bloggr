@@ -5,6 +5,7 @@ require("dotenv").config(); // Load ENV Variables
 const morgan = require("morgan"); //import morgan
 const methodOverride = require("method-override");
 const PostRouter = require("./controllers/post");
+const PostAuthRouter = require("./controllers/postauth");
 const UserRouter = require("./controllers/user");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
@@ -34,8 +35,9 @@ app.use(
   })
 );
 
-app.use("/posts", PostRouter);
 app.use("/user", UserRouter);
+app.use("/", PostAuthRouter);
+app.use("/", PostRouter);
 
 // server listener
 const PORT = process.env.PORT || 3000

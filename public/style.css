@@ -3,7 +3,6 @@ body {
     color: #1c1c1c;
 	margin: 0;
 	padding: 0;
-    background-color: #f1f1f1;
 }
 
 h1 {
@@ -11,7 +10,7 @@ h1 {
 }
 
 h1.title {
-    font-size: 48px;
+    font-size: 38px;
 }
 
 hr {
@@ -22,7 +21,6 @@ hr {
 
 .header {
     margin-bottom: 20px;
-    background-color: rgb(23, 53, 133);
     position: fixed;
     width: 100%;
 }
@@ -31,18 +29,20 @@ hr {
     max-width: 1000px;
     margin: 0 auto;
     padding: 10px 0 13px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .logo {
     font-family: 'PT Serif', 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: 42px;
-    color: #fff;
+    color: #1c1c1c;
     display: inline-block;
 }
 
 .logo a {
-    color: #fff;
+    color: #1c1c1c;
 }
 
 .logo a:hover {
@@ -50,14 +50,11 @@ hr {
 }
 
 .nav {
-    float: right;
-    display: inline-block;
     margin-top: 10px;
 }
 
 .post-container {
     background-color: #fff;
-    padding: 20px 25px;
     margin-bottom: 20px;
     border-radius: 10px;
 }
@@ -69,14 +66,13 @@ hr {
 }
 
 .form-container {
-    max-width: 650px;
     margin: 0 auto;
-    background-color: #fff;
-    padding: 15px 25px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
 }
 
+.edit-header {
+    display: flex;
+    justify-content: space-between;
+}
 
 label {
     display: block;
@@ -114,24 +110,24 @@ a:hover {
 button, input[type=submit] {
     background: #fff;
     color: #1c1c1c;
-    border: 1px solid rgb(6, 27, 85);
-    box-shadow: 0 1px 4px rgb(6, 27, 85);
-    padding: 10px 18px;
+    border: 1px solid #959595;
+    padding: 8px 20px;
     border-radius: 7px;
     display: inline-block;
     cursor: pointer;
     font-size: 14px;
+    margin-left: 15px;
 }
 
 #new-submit {
-    background-color: rgb(23, 53, 133);
+    background-color: #1c1c1c;
     color: #fff;
     box-shadow: none;
     border: 0;
 }
 
 #update-button {
-    background-color: rgb(23, 53, 133);
+    background-color: #1c1c1c;
     color: #fff;
     box-shadow: none;
     border: 0;
@@ -144,6 +140,8 @@ button, input[type=submit] {
 
 #delete-button:hover{
     background-color: rgb(252, 73, 73);
+    border: 1px solid rgb(252, 73, 73);
+    color: #fff;
 }
 .author {
     color: gray;
